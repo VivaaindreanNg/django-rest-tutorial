@@ -4,7 +4,7 @@ This repo is just for me to keep track/practice on Django along with DRF (django
 
 ### To-do lists:
 
-* [ ] Remove the current/existing setups for Windows.
+* [X] Remove the current/existing setups for Windows.
 
 * [ ] Setup new venv for Django.
 
