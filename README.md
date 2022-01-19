@@ -35,3 +35,15 @@ $ source <envName>/bin/activate
 ```
 $ pip install -r requirements.txt
 ```
+
+4: To run the Django server at localhost:
+
+```
+$ python manage.py runserver
+```
+
+4: To activate Django shell in IPython:
+
+```
+$ python manage.py shell -i ipython
+```
