@@ -42,7 +42,7 @@ $ pip install -r requirements.txt
 $ python manage.py runserver
 ```
 
-4: To activate Django shell in IPython:
+5: To activate Django shell in IPython:
 
 ```
 $ python manage.py shell -i ipython
