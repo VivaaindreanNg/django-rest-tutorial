@@ -12,6 +12,8 @@ This repo is just for me to keep track/practice on Django along with DRF (django
 
 * [ ] Added functions-based views vs class-based views in Django.
 
+* [ ] Implement unit-testing for views.
+
 
 ### Installing
 
