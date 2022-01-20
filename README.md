@@ -36,14 +36,20 @@ $ source <envName>/bin/activate
 $ pip install -r requirements.txt
 ```
 
+4. `cd` into **tutorialProject** and make `manage.py` file executable by:
+
+```
+$ chmod +x manage.py
+```
+
 4: To run the Django server at localhost:
 
 ```
-$ python manage.py runserver
+$ ./manage.py runserver
 ```
 
-5: To activate Django shell in IPython:
+5: To activate Django shell:
 
 ```
-$ python manage.py shell -i ipython
+$ ./manage.py shell
 ```
