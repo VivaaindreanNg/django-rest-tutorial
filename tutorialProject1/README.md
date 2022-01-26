@@ -1,6 +1,6 @@
 ## Version 1
 
-This subdirectory should contain the following:
+This subdirectory is a very rudimentary CRUD website using Django framework. It should contain the following:
 
 ### To-do lists:
 
