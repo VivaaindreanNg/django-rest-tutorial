@@ -1,6 +1,6 @@
 ## Version 2
 
-This subdirectory should contain the following:
+This subdirectory is the improved version of Version 1 (**tutorialProject1**). It should contain the following:
 
 ### To-do lists:
 
