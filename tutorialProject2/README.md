@@ -8,6 +8,6 @@ This subdirectory is the improved version of Version 1 (**tutorialProject1**). I
 
 * [ ] Implement [DRF Routers](https://www.django-rest-framework.org/api-guide/routers/) for URLS.
 
-* [ ] Implement unit-testing for views.
+* [ ] Implement unit-testing for views (using [APITestCase](https://www.django-rest-framework.org/api-guide/testing/#api-test-cases) from DRF).
 
 * [ ] Implement front-end frameworks/libraries, i.e: React.
