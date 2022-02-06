@@ -12,7 +12,7 @@ This repo is just for me to keep track/practice on Django along with DRF (django
 
 * [ ] Added functions-based views vs class-based views in Django.
 
-* [ ] Implement unit-testing for views.
+* [ ] Implement unit-testing for views (using [APITestCase](https://www.django-rest-framework.org/api-guide/testing/#api-test-cases) from DRF).
 
 
 ### Installing
