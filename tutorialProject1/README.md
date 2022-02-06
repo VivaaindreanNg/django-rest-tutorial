@@ -6,7 +6,7 @@ This subdirectory is a very rudimentary CRUD website using Django framework. It 
 
 * [X] Add function-based views.
 
-* [ ] Implement unit-testing for views.
+* [ ] Implement unit-testing for views (using [APITestCase](https://www.django-rest-framework.org/api-guide/testing/#api-test-cases) from DRF).
 
 
 ### Run test cases:
