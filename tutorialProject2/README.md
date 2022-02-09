@@ -12,4 +12,4 @@ This subdirectory is the improved version of Version 1 (**tutorialProject1**). I
 
 * [ ] Implement front-end frameworks/libraries, i.e: React.
 
-* [ ] Add Django scripts for automating task (i.e.: For editing models in admin site, etc.)
+* [ ] Add custom scripts to automate some stuffs (i.e: updating records in DB).
