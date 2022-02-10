@@ -6,8 +6,8 @@ from rest_framework.test import APITestCase
 
 class TestView(APITestCase):
     def setUp(self) -> None:
-        self.task1 = mommy.prepare(Task, title="test1", completed=False)
-        self.task2 = mommy.prepare(Task, title="test2", completed=True)
+        self.task1 = mommy.make(Task, title="test1", completed=False)
+        self.task2 = mommy.make(Task, title="test2", completed=True)
 
     def test_task_list_view(self) -> None:
         url = "/api/task-list/"
