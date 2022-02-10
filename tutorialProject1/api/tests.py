@@ -12,8 +12,16 @@ class TestView(APITestCase):
     def test_task_list_view(self) -> None:
         url = "/api/task-list/"
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
+        response_data = response.json()
 
-    def test_task_list(self) -> None:
-        self.assertFalse(self.task1.completed)
-        self.assertTrue(self.task2.completed)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response_data[0]["title"], "test1")
+        self.assertFalse(response_data[0]["completed"])
+        self.assertEqual(response_data[1]["title"], "test2")
+        self.assertTrue(response_data[1]["completed"])
+
+    # def test_task_detail_view(self) -> None:
+    #     url = "/api/task-detail/"
+    #     import pdb
+
+    #     # pdb.set_trace()
