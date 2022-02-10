@@ -14,6 +14,8 @@ This repo is just for me to keep track/practice on Django along with DRF (django
 
 * [ ] Implement unit-testing for views (using [APITestCase](https://www.django-rest-framework.org/api-guide/testing/#api-test-cases) from DRF).
 
+* [ ] Implement [DRF Router](https://www.django-rest-framework.org/api-guide/routers/) for mapping of URL with views.
+
 
 ### Installing
 
