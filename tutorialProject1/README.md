@@ -10,7 +10,7 @@ This subdirectory is a very rudimentary CRUD website using Django framework. It 
 
 * [ ] Implement [DRF Router](https://www.django-rest-framework.org/api-guide/routers/) for mapping of URL with views.
 
-* [X] Setup [Github Actions YML file](../.github/workflows/github-actions-ci.yml) for automating unit testing.
+* [X] Setup [Github Actions YAML file](../.github/workflows/github-actions-ci.yml) for automating unit testing.
 
 
 ### Run test cases:
