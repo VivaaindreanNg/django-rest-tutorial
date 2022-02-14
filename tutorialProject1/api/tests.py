@@ -42,5 +42,6 @@ class TestView(APITestCase):
         response_data = response.data
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Task.objects.count(), 3)
         self.assertEqual(response_data["title"], payload_title)
         self.assertTrue(response_data["completed"])
