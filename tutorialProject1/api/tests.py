@@ -11,9 +11,9 @@ class TestView(APITestCase):
         self.task2 = mommy.make(Task, title="test2", completed=True)
         self.list_all_url = "/api/task-list/"
 
-    def test_task_list_view(self) -> None:
+    def test_list_view(self) -> None:
         response = self.client.get(self.list_all_url)
-        response_data = response.json()
+        response_data = response.data
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response_data[0]["title"], "test1")
@@ -21,15 +21,26 @@ class TestView(APITestCase):
         self.assertEqual(response_data[1]["title"], "test2")
         self.assertTrue(response_data[1]["completed"])
 
-    def test_task_detail_view(self) -> None:
+    def test_detail_view(self) -> None:
         response = self.client.get(self.list_all_url)
-        response_data = response.json()
+        response_data = response.data
         id_0 = response_data[0]["id"]
 
         detail_url = f"/api/task-detail/{id_0}/"
-        get_response = self.client.get(detail_url)
-        get_response_data = get_response.json()
+        response = self.client.get(detail_url)
+        response_data = response.data
 
-        self.assertEqual(get_response.status_code, status.HTTP_200_OK)
-        self.assertEqual(get_response_data["title"], "test1")
-        self.assertFalse(get_response_data["completed"])
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response_data["title"], "test1")
+        self.assertFalse(response_data["completed"])
+
+    def test_create_view(self) -> None:
+        payload_title = "Testing Post"
+        payload = {"title": payload_title, "completed": True}
+
+        response = self.client.post(self.list_all_url, payload)
+        response_data = response.data
+
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(response_data["title"], payload_title)
+        self.assertTrue(response_data["completed"])
