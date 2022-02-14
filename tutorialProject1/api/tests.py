@@ -1,6 +1,7 @@
 # Create your tests here.
 from api.models import Task
 from model_mommy import mommy
+from rest_framework import status
 from rest_framework.test import APITestCase
 
 
@@ -14,7 +15,7 @@ class TestView(APITestCase):
         response = self.client.get(url)
         response_data = response.json()
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response_data[0]["title"], "test1")
         self.assertFalse(response_data[0]["completed"])
         self.assertEqual(response_data[1]["title"], "test2")
