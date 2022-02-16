@@ -45,3 +45,19 @@ class TestView(APITestCase):
         self.assertEqual(Task.objects.count(), 3)
         self.assertEqual(response_data["title"], payload_title)
         self.assertTrue(response_data["completed"])
+
+    def test_update_view(self) -> None:
+        response = self.client.get(self.list_all_url)
+        response_data = response.json()
+        id_0 = response_data[0]["id"]
+
+        update_url = f"/api/task-update/{id_0}/"
+
+        patch_title = "PATCHING"
+        patch_completed = True
+        patch_payload = {"title": patch_title, "completed": patch_completed}
+        response = self.client.put(update_url, patch_payload)
+        response_data = response.data
+
+        self.assertEqual(response_data["title"], patch_title)
+        self.assertTrue(response_data["completed"])
