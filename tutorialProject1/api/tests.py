@@ -13,7 +13,7 @@ class TestView(APITestCase):
 
     def test_list_view(self) -> None:
         response = self.client.get(self.list_all_url)
-        response_data = response.data
+        response_data = response.json()
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response_data[0]["title"], "test1")
@@ -23,12 +23,12 @@ class TestView(APITestCase):
 
     def test_detail_view(self) -> None:
         response = self.client.get(self.list_all_url)
-        response_data = response.data
+        response_data = response.json()
         id_0 = response_data[0]["id"]
 
         detail_url = f"/api/task-detail/{id_0}/"
         response = self.client.get(detail_url)
-        response_data = response.data
+        response_data = response.json()
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response_data["title"], "test1")
@@ -39,7 +39,7 @@ class TestView(APITestCase):
         payload = {"title": payload_title, "completed": True}
 
         response = self.client.post(self.list_all_url, payload)
-        response_data = response.data
+        response_data = response.json()
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Task.objects.count(), 3)
