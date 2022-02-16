@@ -71,7 +71,7 @@ def taskDetail(request, pk):
         return Response(serializer.data)
 
 
-@api_view(["POST"])
+@api_view(["PUT"])
 def taskUpdate(request, pk):
     """[Update a single Task object based on the ID given (aka primary key)]
 
