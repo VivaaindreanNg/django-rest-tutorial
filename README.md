@@ -19,6 +19,8 @@ This repo is just for me to keep track/practice on Django along with DRF (django
 
 * [X] Setup [Github Actions YAML file](.github/workflows/github-actions-ci.yml) for automating unit testing.
 
+* [ ] Add codecoverage tools in Github Action's workflow.
+
 
 ### Installing
 
