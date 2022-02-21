@@ -49,9 +49,9 @@ class TestView(APITestCase):
     def test_update_view(self) -> None:
         response = self.client.get(self.list_all_url)
         response_data = response.data
-        id_0 = response_data[0]["id"]
+        id = response_data[0]["id"]
 
-        update_url = f"/api/task-update/{id_0}/"
+        update_url = f"/api/task-update/{id}/"
 
         patch_title = "PATCHING"
         patch_completed = True
@@ -61,3 +61,13 @@ class TestView(APITestCase):
 
         self.assertEqual(response_data["title"], patch_title)
         self.assertTrue(response_data["completed"])
+
+    def test_delete_view(self) -> None:
+        response = self.client.get(self.list_all_url)
+        response_data = response.data
+        id = response_data[0]["id"]
+
+        delete_url = f"/api/task-delete/{id}/"
+        response = self.client.delete(delete_url)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
