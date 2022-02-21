@@ -12,6 +12,8 @@ This subdirectory is a very rudimentary CRUD website using Django framework. It 
 
 * [X] Setup [Github Actions YAML file](../.github/workflows/github-actions-ci.yml) for automating unit testing.
 
+* [ ] Change the endpoint such that GET, POST, PUT, DELETE methods are using the same endpoint.
+
 
 ### Run test cases:
 To run all test cases, simply run:
