@@ -20,10 +20,10 @@ def apiOverview(request):
         [JSON Response]: [Returns list of urls for our API]
     """
     api_urls = {
-        "Create & List": "/task-list/",
-        "Detail View": "/task-detail/<str:pk>/",
-        "Update": "/task-update/<str:pk>/",
-        "Delete": "/task-delete/<str:pk>/",
+        "Create & List [GET]": "/tasks/",
+        "Detail View [GET]": "/tasks/<str:pk>/",
+        "Update [PUT]": "/tasks/<str:pk>/",
+        "Delete [DELETE]": "/tasks/<str:pk>/",
     }
     return Response(api_urls)
 
@@ -54,9 +54,9 @@ def taskList(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(["GET"])
-def taskDetail(request, pk):
-    """[Display a single Task object based on the ID given (aka primary key)]
+@api_view(["GET", "PUT", "DELETE"])
+def taskDetail(request, pk) -> Response:
+    """[Display, Update or Delete a single Task object based on the ID given (aka primary key)]
 
     Args:
         request [object]: [Takes argument from HTTP request]
@@ -65,49 +65,23 @@ def taskDetail(request, pk):
     Returns:
         [JSON Response]: [Returns a single Task from DB in format of JSON.]
     """
+
+    # first, get task from db based on supplied pk
+    task = Task.objects.get(id=pk)
+
     if request.method == "GET":
-        task = Task.objects.get(id=pk)
         serializer = TaskSerializer(task, many=False)
         return Response(serializer.data)
 
+    elif request.method == "PUT":
+        # Get the updated data from request and update said task
+        serializer = TaskSerializer(instance=task, data=request.data)
 
-@api_view(["PUT"])
-def taskUpdate(request, pk):
-    """[Update a single Task object based on the ID given (aka primary key)]
+        if serializer.is_valid():
+            serializer.save()
+        return Response(serializer.data)
 
-    Args:
-        request [object]: [Takes argument from HTTP request]
-
-    Returns:
-        [JSON Response]: [Returns a single Task from DB in format of JSON.]
-    """
-
-    # first, get task from db based on supplied pk
-    task = Task.objects.get(id=pk)
-
-    # then, get the updated data from request and update said task
-    serializer = TaskSerializer(instance=task, data=request.data)
-
-    if serializer.is_valid():
-        serializer.save()
-    return Response(serializer.data)
-
-
-@api_view(["DELETE"])
-def taskDelete(request, pk):
-    """[Delete a single Task object based on the ID given (aka primary key)]
-
-    Args:
-        request [object]: [Takes argument from HTTP request]
-
-    Returns:
-        [JSON Response]: [Returns a single Task from DB in format of JSON.]
-    """
-
-    # first, get task from db based on supplied pk
-    task = Task.objects.get(id=pk)
-
-    # then, delete said task
-    task.delete()
-
-    return Response("Task deleted")
+    elif request.method == "DELETE":
+        # Delete said task
+        task.delete()
+        return Response("Task deleted")
