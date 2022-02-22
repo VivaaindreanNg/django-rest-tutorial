@@ -9,7 +9,7 @@ class TestView(APITestCase):
     def setUp(self) -> None:
         self.task1 = mommy.make(Task, title="test1", completed=False)
         self.task2 = mommy.make(Task, title="test2", completed=True)
-        self.list_all_url = "/api/task-list/"
+        self.list_all_url = "/api/tasks/"
 
     def test_list_view(self) -> None:
         response = self.client.get(self.list_all_url)
@@ -26,7 +26,7 @@ class TestView(APITestCase):
         response_data = response.data
         id_0 = response_data[0]["id"]
 
-        detail_url = f"/api/task-detail/{id_0}/"
+        detail_url = f"/api/tasks/{id_0}/"
         response = self.client.get(detail_url)
         response_data = response.data
 
@@ -51,7 +51,7 @@ class TestView(APITestCase):
         response_data = response.data
         id = response_data[0]["id"]
 
-        update_url = f"/api/task-update/{id}/"
+        update_url = f"/api/tasks/{id}/"
 
         patch_title = "PATCHING"
         patch_completed = True
@@ -67,7 +67,7 @@ class TestView(APITestCase):
         response_data = response.data
         id = response_data[0]["id"]
 
-        delete_url = f"/api/task-delete/{id}/"
+        delete_url = f"/api/tasks/{id}/"
         response = self.client.delete(delete_url)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
