@@ -20,7 +20,8 @@ def apiOverview(request):
         [JSON Response]: [Returns list of urls for our API]
     """
     api_urls = {
-        "Create & List [GET]": "/tasks/",
+        "Create [POST]": "/tasks/",
+        "List [GET]": "/tasks/",
         "Detail View [GET]": "/tasks/<str:pk>/",
         "Update [PUT]": "/tasks/<str:pk>/",
         "Delete [DELETE]": "/tasks/<str:pk>/",
@@ -29,7 +30,7 @@ def apiOverview(request):
 
 
 @api_view(["GET", "POST"])
-def taskList(request):
+def task_list(request):
     """[List all code tasks if GET request,
     or create a new task if POST request.]
 
@@ -55,7 +56,7 @@ def taskList(request):
 
 
 @api_view(["GET", "PUT", "DELETE"])
-def taskDetail(request, pk) -> Response:
+def task_detail(request, pk) -> Response:
     """[Display, Update or Delete a single Task object based on the ID given (aka primary key)]
 
     Args:
