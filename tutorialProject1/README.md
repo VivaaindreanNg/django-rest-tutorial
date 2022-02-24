@@ -14,6 +14,8 @@ This subdirectory is a very rudimentary CRUD website using Django framework. It 
 
 * [X] Change the endpoint such that GET, POST, PUT, DELETE methods are using the same endpoint.
 
+* [ ] Add PATCH methods for partially-update a request.
+
 
 ### Run test cases:
 To run all test cases, simply run:
