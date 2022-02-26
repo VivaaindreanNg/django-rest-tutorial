@@ -55,7 +55,7 @@ def task_list(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(["GET", "PUT", "DELETE"])
+@api_view(["GET", "PUT", "PATCH", "DELETE"])
 def task_detail(request, pk) -> Response:
     """[Display, Update or Delete a single Task object based on the ID given (aka primary key)]
 
@@ -74,7 +74,7 @@ def task_detail(request, pk) -> Response:
         serializer = TaskSerializer(task, many=False)
         return Response(serializer.data)
 
-    elif request.method == "PUT":
+    elif request.method == "PUT" or request.method == "PATCH":
         # Get the updated data from request and update said task
         serializer = TaskSerializer(instance=task, data=request.data)
 
