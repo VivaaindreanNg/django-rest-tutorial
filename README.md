@@ -21,6 +21,8 @@ This repo is just for me to keep track/practice on Django along with DRF (django
 
 * [ ] Add codecoverage tools in Github Action's workflow.
 
+* [ ] Setup Docker for this project.
+
 
 ### Installing
 
