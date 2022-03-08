@@ -12,8 +12,6 @@ This subdirectory is the improved version of Version 1 (**tutorialProject1**). I
 
 * [ ] Implement unit-testing for views (using [APITestCase](https://www.django-rest-framework.org/api-guide/testing/#api-test-cases) from DRF and [model_mommy](https://model-mommy.readthedocs.io/en/latest/basic_usage.html)).
 
-* [ ] Implement front-end frameworks/libraries, i.e: React.
-
 * [ ] Add custom scripts to automate some stuffs (i.e: updating records in DB).
 
 * [ ] Setup Docker for this project.
