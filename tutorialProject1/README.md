@@ -18,6 +18,8 @@ This subdirectory is a very rudimentary CRUD website using Django framework. It 
 
 * [ ] Implement [Karate Script](https://github.com/karatelabs/karate) for Automated Testing.
 
+* [ ] Add [Custom Django Management Commands](https://docs.djangoproject.com/en/dev/howto/custom-management-commands/) to automate some stuffs (i.e: updating records in DB).
+
 
 ### Run test cases:
 To run all test cases, simply run:
