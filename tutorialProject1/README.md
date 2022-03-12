@@ -14,13 +14,11 @@ This subdirectory is a very rudimentary CRUD website using Django framework. It 
 
 * [X] Add PATCH methods for partially-update a request.
 
-* [ ] Implement [DRF Router](https://www.django-rest-framework.org/api-guide/routers/) for mapping of URL with views.
-
 * [ ] Implement [Karate Script](https://github.com/karatelabs/karate) for Automated Testing.
 
-* [ ] Add existing models in Django admin site.
+* [X] Add existing models in Django admin site.
 
-* [ ] Add [Custom Django Management Commands](https://docs.djangoproject.com/en/dev/howto/custom-management-commands/) to automate some stuffs (i.e: updating records in DB).
+* [X] Add [Custom Django Management Commands](https://docs.djangoproject.com/en/dev/howto/custom-management-commands/) to automate some stuffs (i.e: updating records in DB).
 
 
 ### Run test cases:
