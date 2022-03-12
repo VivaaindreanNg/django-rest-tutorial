@@ -1,5 +1,6 @@
 from typing import Optional
 
+import numpy as np
 import pandas as pd
 from api.models import Task
 from django.core.management.base import BaseCommand
@@ -28,16 +29,17 @@ class Command(BaseCommand):
 
         file_path = "/home/vivaain/workspace/django-rest-tutorial/tutorialProject1/test-data.csv"
 
-        data_frame = pd.read_csv(file_path, sep=";")
+        if Task.objects.all().exists():
+            Task.objects.all().delete()
 
-        import pdb
+        data_frame = pd.read_csv(file_path, sep=";")
+        data_frame["completed"].replace(np.nan, False, inplace=True)
 
         for _, data in data_frame.iterrows():
             Task.objects.update_or_create(
-                title=data["title"],
-                completed=data["completed"],
+                title=data.title,
+                completed=data.completed,
             )
-            pdb.set_trace()
 
         if options["commit"]:
             self.stdout.write(self.style.SUCCESS("Successfully refreshed Task data."))
