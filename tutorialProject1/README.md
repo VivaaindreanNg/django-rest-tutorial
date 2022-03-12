@@ -14,7 +14,7 @@ This subdirectory is a very rudimentary CRUD website using Django framework. It 
 
 * [X] Add PATCH methods for partially-update a request.
 
-* [ ] Implement [Karate Script](hhttps://github.com/VivaaindreanNg/Karate-Test) for Automated Testing.
+* [ ] Implement [Karate Script](https://github.com/VivaaindreanNg/Karate-Test) for Automated Testing.
 
 * [X] Add existing models in Django admin site.
 
