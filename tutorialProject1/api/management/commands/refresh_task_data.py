@@ -1,8 +1,10 @@
+import os
 from typing import Optional
 
 import numpy as np
 import pandas as pd
 from api.models import Task
+from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
@@ -27,19 +29,22 @@ class Command(BaseCommand):
     def handle(self, **options) -> Optional[str]:
         savepoint = transaction.savepoint()
 
-        file_path = "/home/vivaain/workspace/django-rest-tutorial/tutorialProject1/test-data.csv"
+        BASE_DIR = getattr(settings, "BASE_DIR")
+        file_path = os.path.join(BASE_DIR, "test-data.csv")
+        file_path = os.path.join(file_path)
 
-        if Task.objects.all().exists():
-            Task.objects.all().delete()
+        if os.path.exists(file_path):
+            if Task.objects.all().exists():
+                Task.objects.all().delete()
 
-        data_frame = pd.read_csv(file_path, sep=";")
-        data_frame["completed"].replace(np.nan, False, inplace=True)
+            data_frame = pd.read_csv(file_path, sep=";")
+            data_frame["completed"].replace(np.nan, False, inplace=True)
 
-        for _, data in data_frame.iterrows():
-            Task.objects.update_or_create(
-                title=data.title,
-                completed=data.completed,
-            )
+            for _, data in data_frame.iterrows():
+                Task.objects.update_or_create(
+                    title=data.title,
+                    completed=data.completed,
+                )
 
         if options["commit"]:
             self.stdout.write(self.style.SUCCESS("Successfully refreshed Task data."))
