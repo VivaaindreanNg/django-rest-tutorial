@@ -1,5 +1,5 @@
 ## Django Rest Tutorial
-[![Django CI](https://github.com/VivaaindreanNg/django-rest-tutorial/actions/workflows/github-actions-ci.yml/badge.svg)](https://github.com/VivaaindreanNg/django-rest-tutorial/actions/workflows/github-actions-ci.yml)
+[![Django CI](https://github.com/VivaaindreanNg/django-rest-tutorial/actions/workflows/django-ci.yml/badge.svg)](https://github.com/VivaaindreanNg/django-rest-tutorial/actions/workflows/django-ci.yml)
 
 This repo is just for me to keep track/practice on Django along with DRF (djangorestframework).
 
