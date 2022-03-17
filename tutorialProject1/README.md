@@ -18,7 +18,7 @@ This subdirectory is a very rudimentary CRUD website using Django framework. It 
 
 * [X] Add existing models in Django admin site.
 
-* [X] Implement Django [get_FOO_display](https://docs.djangoproject.com/en/4.0/ref/models/instances/#django.db.models.Model.get_FOO_display) for fields with choices.
+* [ ] Implement Django [get_FOO_display](https://docs.djangoproject.com/en/4.0/ref/models/instances/#django.db.models.Model.get_FOO_display) for fields with choices.
 
 * [X] Add [Custom Django Management Commands](https://docs.djangoproject.com/en/dev/howto/custom-management-commands/) to automate some stuffs (i.e: updating records in DB).
 
