@@ -39,11 +39,13 @@ class Command(BaseCommand):
 
             data_frame = pd.read_csv(file_path, sep=";")
             data_frame["completed"].replace(np.nan, False, inplace=True)
+            data_frame["types"].replace(np.nan, "nu", inplace=True)
 
             for _, data in data_frame.iterrows():
                 Task.objects.update_or_create(
                     title=data.title,
                     completed=data.completed,
+                    types=data.types,
                 )
 
         if options["commit"]:
