@@ -11,6 +11,8 @@ class TaskSerializer(serializers.ModelSerializer):
         serializers (ModelSerializer): [imported from serializers.ModelSerializer]
     """
 
+    types = serializers.CharField(source="get_types_display")
+
     class Meta:
         model = Task
         fields = "__all__"
