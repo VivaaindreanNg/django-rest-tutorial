@@ -22,6 +22,8 @@ This subdirectory is a very rudimentary CRUD website using Django framework. It 
 
 * [X] Add [Custom Django Management Commands](https://docs.djangoproject.com/en/dev/howto/custom-management-commands/) to automate some stuffs (i.e: updating records in DB).
 
+* [ ] Implement webhook for Django.
+
 
 ### Run test cases:
 To run all test cases, simply run:
