@@ -24,6 +24,8 @@ This subdirectory is a very rudimentary CRUD website using Django framework. It 
 
 * [ ] Implement webhook for Django.
 
+* [ ] Implement service layer (Based on Two Scoops of Django).
+
 
 ### Run test cases:
 To run all test cases, simply run:
