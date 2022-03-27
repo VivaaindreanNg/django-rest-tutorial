@@ -23,6 +23,8 @@ This repo is just for me to keep track/practice on Django along with DRF (django
 
 * [ ] Setup Docker for this project.
 
+* [ ] Implement service layer (Based on Two Scoops of Django).
+
 
 ### Installing
 
